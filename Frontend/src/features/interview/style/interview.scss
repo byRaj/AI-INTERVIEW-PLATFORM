@@ -1,0 +1,239 @@
+// ── BASE ─────────────────────────────────────────
+* {
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #2a3348;
+  border-radius: 10px;
+}
+
+// ── COLORS ───────────────────────────────────────
+$bg: #0d1117;
+$card: #161b22;
+$panel: #1c2230;
+$border: #2a3348;
+$text: #e6edf3;
+$text-muted: #7d8590;
+$accent: #ff2d78;
+
+// ── PAGE ─────────────────────────────────────────
+.interview-page {
+  height: 100vh;
+  background: $bg;
+  padding: 1.5rem;
+  display: flex;
+}
+
+// ── MAIN LAYOUT ──────────────────────────────────
+.interview-layout {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  height: 100%;
+  background: $card;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+// ── DIVIDER ──────────────────────────────────────
+.interview-divider {
+  width: 1px;
+  background: $border;
+}
+
+// ── LEFT NAV ─────────────────────────────────────
+.interview-nav {
+  width: 220px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.interview-nav__label {
+  font-size: 0.7rem;
+  color: $text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.interview-nav__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: $text-muted;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $panel;
+    color: $text;
+  }
+}
+
+.interview-nav__item--active {
+  background: rgba($accent, 0.12);
+  color: $accent;
+}
+
+// ── LOGOUT BUTTON (clean version) ─────────────────
+.logout-btn {
+  font-size: 1.5rem;
+  margin-top: auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  background: transparentize($color: #000000, $amount: 0);
+  color: $text-muted;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background: $panel;
+    color: $accent;
+  }
+}
+
+// ── CENTER CONTENT ───────────────────────────────
+.interview-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+// ── HEADER ───────────────────────────────────────
+.content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  &__count {
+    font-size: 0.75rem;
+    color: $text-muted;
+  }
+}
+
+// ── QUESTION CARDS ───────────────────────────────
+.q-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.q-card {
+  background: $panel;
+  border-radius: 10px;
+  padding: 14px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.q-card__header {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.q-card__index {
+  font-size: 0.75rem;
+  color: $accent;
+}
+
+.q-card__question {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.q-card__body {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: $text-muted;
+  line-height: 1.6;
+}
+
+// ── ROADMAP ──────────────────────────────────────
+.roadmap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.roadmap-day {
+  background: $panel;
+  padding: 14px;
+  border-radius: 10px;
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  p {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: $text-muted;
+  }
+}
+
+// ── RIGHT SIDEBAR ────────────────────────────────
+.interview-sidebar {
+  width: 260px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+// ── MATCH SCORE ──────────────────────────────────
+.match-score {
+  text-align: center;
+
+  &__label {
+    font-size: 0.75rem;
+    color: $text-muted;
+  }
+
+  &__value {
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+}
+
+// ── SKILLS ───────────────────────────────────────
+.skill-gaps__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-tag {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: $panel;
+}
