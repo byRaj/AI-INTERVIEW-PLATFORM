@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://ai-interview-platform-rose-psi.vercel.app/",
+    origin: "https://ai-interview-platform-rose-psi.vercel.app",
     credentials: true,
   }),
 );
